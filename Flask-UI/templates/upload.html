@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Upload</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<div>
+ <div class="container mt-5">
+     <div class="row">
+          <div class="col-10">
+               <img src='https://assets.cntraveller.in/photos/61160b855ee2ad4060e8ca19/16:9/w_1920,h_1080,c_limit/Summertime_goa_indiasbestvilla_lead.jpg' class="img-fluid"  width="1100" height="236">
+          </div> 
+          <div  class="col-1" >
+               <button type="button" class="btn btn-link">Home</button>
+          </div>
+          <div  class="col-1" >
+               <button type="button" class="btn btn-link">Predict</button>
+          </div>
+     </div>
+ </div>
+ <center>
+             <div class="container-fluid px-0"> 
+                 <div class="mx-auto tm-content-container">
+                     <div class="row mt-3 mb-5 pb-3">
+                         <div class="col-12">
+                             <div class="mx-auto tm-about-text-container px-3">
+                                 <h2 class="tm-page-title mb-4 text-primary">Enter the values to predict to Predict House Rent: </h2>
+                                 <form action="{{ url_for('predict')}}" method="post">
+                                    <div class="form-group">
+                                       <label for="City">City</label>
+                                       <select class="form-cont" id="City" name="City">
+                                          <option value="">SELECT CITY</option>
+                                          <option value="0">Ahmedabad</option>
+                                          <option value="1">Trivandraum</option>
+                                          <option value="2">Bangalore</option>
+                                          <option value="3">Chennai</option>
+                                          <option value="4">Hyderabad</option>
+                                          <option value="5">Mumbai</option>
+                                          <option value="6">Delhi</option>
+                                          <option value="7">Pune</option>
+                                       </select>
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="BHKS">SELECT NO OF BHks (Range 1.0 to 32.0)</label>
+                                       <input type="text" class="form-control" name="BHKS" id="BHKS">
+                                    
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="sqrt_per_inch">House Size in sqrt_per_inch: (Range 1.0 to 2717.0)</label>
+                                       <input type="text" class="form-control" name="sqrt_per_inch" id="sqrt_per_inch">
+
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                       <label for="build_up_area">TYPE OF HOUSE</label>
+                                       <select class="form-cont" id="build_up_area" name="build_up_area">
+                                          <option value="">SELECT TYPE OF HOUSING</option>
+                                          <option value="0">Built-up Area</option>
+                                          <option value="1">Carpet Area</option>
+                                          <option value="2">Plot Area</option>
+                                          <option value="3">Super Built-up Area</option>
+                                       </select>
+                                          
+                                 
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="Type_of_property">TYPE Of PROPERTY</label>
+                                       <select class="form-cont" id="Type_of_property" name="Type_of_property">
+                                          <option value="">SELECT TYPE OF PROPERTY</option>
+                                          <option value="0">Farm</option>
+                                          <option value="1">Independent</option>
+                                          <option value="2">Residental</option>
+                                          <option value="3">Studio</option>
+                                       </select>
+
+
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="deposit">Deposite Range 0.0 to 21000000.0</label>
+                                       <input type="text" class="form-control" name="deposit" id="deposit">
+
+                                    </div>
+                                          <div class="form-group" id="submit">
+                                             <center><button type="submit" class="btn btn-primary btn-block btn-Large" id="submit" value="Predict">predict</button></center>
+                                          </div>
+                                          <div id="output">
+                                             <h3>{{ prediction_text }}</h3>
+                                          </div>
+                                    
+                              
+                                    
+
+                                 </form>
+                                 
+ 
+                             </div>
+                      
+                         </div>
+                     </div>
+ 
+                 </div>
+               </center>
+  </div>
